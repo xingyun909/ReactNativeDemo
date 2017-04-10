@@ -6,11 +6,12 @@
 
 import React, {Component} from 'react';
 import TabNavigator from 'react-native-tab-navigator';
-import {AppRegistry, StyleSheet, Text, View,Image} from 'react-native';
+import {AppRegistry, StyleSheet, Text, View, Image,Navigator} from 'react-native';
 
+import Boy from './demo/boy'
 export default class AwsomeProject extends Component {
-  state={
-    selectedTab:'tb_popular'
+  state = {
+    selectedTab: 'tb_popular'
   }
   constructor(props) {
     super(props);
@@ -18,7 +19,7 @@ export default class AwsomeProject extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <TabNavigator>
+        {/*<TabNavigator>
           <TabNavigator.Item
             selected={this.state.selectedTab === 'tb_popular'}
             selectedTitleStyle={{color:'red'}}
@@ -56,7 +57,17 @@ export default class AwsomeProject extends Component {
             onPress={() => this.setState({selectedTab: 'tb_my'})}>
             <View style={styles.page2}></View>
           </TabNavigator.Item>
-        </TabNavigator>
+        </TabNavigator>*/}
+          <Navigator 
+            initialRoute={{
+              component:Boy
+            }}
+            renderScene={(route,navigator)=>{
+              let Component = route.component;
+              return <Component navigator={navigator} {...route.params} />
+            }}
+          >
+          </Navigator>
       </View>
     );
   }
@@ -65,21 +76,19 @@ export default class AwsomeProject extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // justifyContent: 'center',
-    // alignItems: 'center',
-    // backgroundColor: '#F5FCFF'
+    // justifyContent: 'center', alignItems: 'center', backgroundColor: '#F5FCFF'
   },
-  page1:{
-    flex:1,
-    backgroundColor:'red'
+  page1: {
+    flex: 1,
+    backgroundColor: 'red'
   },
-  page2:{
-    flex:1,
-    backgroundColor:'yellow'
+  page2: {
+    flex: 1,
+    backgroundColor: 'yellow'
   },
-  image:{
-    width:22,
-    height:22
+  image: {
+    width: 22,
+    height: 22
   }
 });
 
