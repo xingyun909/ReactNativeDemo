@@ -8,7 +8,9 @@ import React, {Component} from 'react';
 import TabNavigator from 'react-native-tab-navigator';
 import {AppRegistry, StyleSheet, Text, View, Image,Navigator} from 'react-native';
 
-import Boy from './demo/boy'
+import Boy from './demo/navigatorBar/boy';
+import NavigatorBar from './demo/navigatorBar/navigatorBar';
+import ListView from './demo/ListViewText/listView'
 export default class AwsomeProject extends Component {
   state = {
     selectedTab: 'tb_popular'
@@ -58,7 +60,13 @@ export default class AwsomeProject extends Component {
             <View style={styles.page2}></View>
           </TabNavigator.Item>
         </TabNavigator>*/}
-          <Navigator 
+          {/*<NavigatorBar 
+            title={'boy'} 
+            statusBar={{
+              backgroundColor:'red'
+            }}
+            />*/}
+          {/*<Navigator 
             initialRoute={{
               component:Boy
             }}
@@ -67,7 +75,8 @@ export default class AwsomeProject extends Component {
               return <Component navigator={navigator} {...route.params} />
             }}
           >
-          </Navigator>
+          </Navigator>*/}
+          <ListView />
       </View>
     );
   }
