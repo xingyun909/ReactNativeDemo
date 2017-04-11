@@ -11,6 +11,7 @@ import {AppRegistry, StyleSheet, Text, View, Image,Navigator} from 'react-native
 import Boy from './demo/navigatorBar/boy';
 import NavigatorBar from './demo/navigatorBar/navigatorBar';
 import ListView from './demo/ListViewText/listView'
+import FetchTest from './demo//fetch'
 export default class AwsomeProject extends Component {
   state = {
     selectedTab: 'tb_popular'
@@ -76,7 +77,8 @@ export default class AwsomeProject extends Component {
             }}
           >
           </Navigator>*/}
-          <ListView />
+          {/*<ListView />*/}
+          <FetchTest />
       </View>
     );
   }
