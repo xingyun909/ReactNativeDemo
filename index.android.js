@@ -10,8 +10,10 @@ import {AppRegistry, StyleSheet, Text, View, Image,Navigator} from 'react-native
 
 import Boy from './demo/navigatorBar/boy';
 import NavigatorBar from './demo/navigatorBar/navigatorBar';
-import ListView from './demo/ListViewText/listView'
-import FetchTest from './demo//fetch'
+import ListView from './demo/ListViewText/listView';
+import FetchTest from './demo//fetch';
+
+import setup from './js/page/setup'
 export default class AwsomeProject extends Component {
   state = {
     selectedTab: 'tb_popular'
@@ -103,4 +105,5 @@ const styles = StyleSheet.create({
   }
 });
 
-AppRegistry.registerComponent('AwsomeProject', () => AwsomeProject);
+// AppRegistry.registerComponent('AwsomeProject', () => AwsomeProject);
+AppRegistry.registerComponent('AwsomeProject', () => setup);
